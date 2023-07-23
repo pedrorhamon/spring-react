@@ -7,6 +7,4 @@ import com.starking.cardapio.domain.Food;
 /**
  * @author pedroRhamon
  */
-public interface FoodRepository extends JpaRepository<Food, Long>{
-
-}
+public interface FoodRepository extends JpaRepository<Food, Long>{}
