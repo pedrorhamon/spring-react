@@ -8,6 +8,10 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 
 /**
  * @author pedroRhamon
@@ -15,15 +19,23 @@ import jakarta.persistence.Table;
 
 @Entity(name = "foods")
 @Table(name = "foods")
+@AllArgsConstructor
+@NoArgsConstructor
+@Data
+@EqualsAndHashCode(onlyExplicitlyIncluded = true)
 public class Food implements Serializable{
 
 	private static final long serialVersionUID = 1L;
 	
 	@Id
+	@EqualsAndHashCode.Include
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	
 	@Column
 	private String title;
-
+	
+	private String image;
+	
+	private Integer price;
 }
