@@ -2,6 +2,8 @@ package com.starking.cardapio.domain;
 
 import java.io.Serializable;
 
+import com.starking.cardapio.domain.dtos.FoodRequestDTO;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -38,4 +40,10 @@ public class Food implements Serializable{
 	private String image;
 	
 	private Integer price;
+	
+	public Food(FoodRequestDTO data) {
+		this.image = data.image();
+		this.price = data.price();
+		this.title = data.title();
+	}
 }
