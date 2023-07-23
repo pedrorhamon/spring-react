@@ -34,6 +34,7 @@ public class FoodController {
 		this.foodService.save(data);
 	}
 	
+	@CrossOrigin(originPatterns = "*", allowedHeaders = "*")
 	@GetMapping
 	@ResponseStatus(HttpStatus.OK)
 	public List<FoodResponseDTO> getAll() {
