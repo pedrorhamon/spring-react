@@ -3,6 +3,7 @@ package com.starking.cardapio.controllers;
 import java.util.List;
 
 import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -26,6 +27,7 @@ public class FoodController {
 
 	private final FoodService foodService;
 
+	@CrossOrigin(originPatterns = "*", allowedHeaders = "*")
 	@PostMapping
 	@ResponseStatus(HttpStatus.CREATED)
 	public void saveFood(@RequestBody FoodRequestDTO data) {
@@ -33,6 +35,7 @@ public class FoodController {
 	}
 	
 	@GetMapping
+	@ResponseStatus(HttpStatus.OK)
 	public List<FoodResponseDTO> getAll() {
 		return this.foodService.getAll();
 	}
