@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @author pedroRhamon
  */
 @RestController
-@RequestMapping("/food")
+@RequestMapping("food")
 public class FoodController {
 
 	@GetMapping
