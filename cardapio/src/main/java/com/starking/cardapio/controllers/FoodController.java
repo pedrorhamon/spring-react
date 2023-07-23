@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.starking.cardapio.domain.Food;
+import com.starking.cardapio.domain.dtos.FoodResponseDTO;
 import com.starking.cardapio.services.FoodService;
 
 import lombok.RequiredArgsConstructor;
@@ -22,7 +22,7 @@ public class FoodController {
 	private final FoodService foodService;
 
 	@GetMapping
-	public List<Food> getAll() {
+	public List<FoodResponseDTO> getAll() {
 		return this.foodService.getAll();
 	}
 }
