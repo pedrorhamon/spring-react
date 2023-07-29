@@ -10,6 +10,8 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -34,11 +36,16 @@ public class Food implements Serializable{
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	
-	@Column
+	@NotNull(message = "Imagem title")
+	@NotEmpty(message = "Não pode ser vázio")
 	private String title;
 	
+	@NotNull(message = "Imagem obrigatória")
+	@NotEmpty(message = "Não pode ser vázio")
 	private String image;
 	
+	@NotNull(message = "Imagem price")
+	@NotEmpty(message = "Não pode ser vázio")
 	private Integer price;
 	
 	public Food(FoodRequestDTO data) {
